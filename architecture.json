@@ -1,0 +1,37 @@
+{
+    "language": "Python",
+    "dependency_file": "requirements.txt",
+    "dependencies": ["pandas", "numpy", "matplotlib", "scikit-learn"],
+    "files": [
+        {
+            "path": "src/senescence_tracker/__init__.py",
+            "description": "Package initialization for SenescenceCellTracker",
+            "exports": ["class SenescenceAnalyzer", "class AptamerSimulator", "class BatchProcessor"]
+        },
+        {
+            "path": "src/senescence_tracker/analyzer.py",
+            "description": "Core module for senescence detection and analysis",
+            "exports": ["class SenescenceAnalyzer", "function identify_senescent_cells(df)", "function calculate_aging_scores(results)"]
+        },
+        {
+            "path": "src/senescence_tracker/aptamer.py",
+            "description": "Module for simulating aptamer binding to senescent cells",
+            "exports": ["class AptamerSimulator", "function calculate_binding_affinity(cell_type, aptamer_sequence)"]
+        },
+        {
+            "path": "src/senescence_tracker/batch_processor.py",
+            "description": "Handles batch processing of multiple datasets",
+            "exports": ["class BatchProcessor", "function process_dataset_batch(dataset_paths)", "function save_results(results, filename)"]
+        },
+        {
+            "path": "src/senescence_tracker/visualizer.py",
+            "description": "Visualization tools for senescence analysis results",
+            "exports": ["function plot_senescence_distribution(scores)"]
+        },
+        {
+            "path": "src/main.py",
+            "description": "Main entry point demonstrating usage examples",
+            "imports_from_other_files": ["senescence_tracker.analyzer", "senescence_tracker.aptamer", "senescence_tracker.batch_processor"]
+        }
+    ]
+}
